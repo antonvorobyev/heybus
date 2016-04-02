@@ -1,4 +1,9 @@
 # Hey, bus!
 
-version control: https://github.com/antonvorobyev/heybus
-issue management: https://waffle.io/antonvorobyev/heybus
+## Version Control
+
+https://github.com/antonvorobyev/heybus
+
+## Issue Management 
+
+https://waffle.io/antonvorobyev/heybus
