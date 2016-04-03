@@ -1,0 +1,23 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "description": "Web client of 'Hey, bus!'",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/antonvorobyev/heybus.git"
+  },
+  "keywords": [
+    "web",
+    "client",
+    "heybus",
+    "bus",
+    "schedule"
+  ],
+  "author": "Anton Vorobyev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://waffle.io/antonvorobyev/heybus"
+  },
+  "homepage": "https://github.com/antonvorobyev/heybus#readme"
+}
