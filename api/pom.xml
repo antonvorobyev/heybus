@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>co.vorobyev.heybus</groupId>
-    <artifactId>app</artifactId>
+    <artifactId>api</artifactId>
     <version>0.1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
-    <name>Hey, bus!</name>
-    <!--TODO: fill with description-->
-    <description>Hey, bus!</description>
+    <name>heybus api</name>
+    <description>API of 'Hey, bus!'</description>
 
     <licenses>
 
@@ -134,9 +134,104 @@
                 <version>2.10</version>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <attachClasses>true</attachClasses>
+                </configuration>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.18.1</version>
+
+                <executions>
+
+                    <execution>
+                        <id>integration-test</id>
+
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+
+                    </execution>
+
+                </executions>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.2.v20140723</version>
+
+                <configuration>
+                    <war>${project.build.directory}/${project.build.finalName}.war</war>
+                    <stopPort>9099</stopPort>
+                    <stopKey>stop</stopKey>
+                    <stopWait>10</stopWait>
+                    <scanIntervalSeconds>0</scanIntervalSeconds>
+                </configuration>
+
+                <executions>
+
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>pre-integration-test</phase>
+
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+
+                        <configuration>
+                            <daemon>true</daemon>
+                        </configuration>
+
+                    </execution>
+
+                    <execution>
+                        <id>stop-jetty</id>
+                        <phase>post-integration-test</phase>
+
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+
+                    </execution>
+
+                </executions>
+
+            </plugin>
+
         </plugins>
 
     </build>
+
+    <profiles>
+
+        <profile>
+
+            <id>dev</id>
+
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <build>
+                <defaultGoal>mvn jetty:run</defaultGoal>
+            </build>
+
+
+        </profile>
+
+    </profiles>
 
 
 </project>
