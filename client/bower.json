@@ -1,0 +1,25 @@
+{
+  "name": "client",
+  "description": "Web client of 'Hey, bus!'",
+  "main": "index.js",
+  "authors": [
+    "Anton Vorobyev"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "web",
+    "client",
+    "heybus",
+    "bus",
+    "schedule"
+  ],
+  "homepage": "https://github.com/antonvorobyev/heybus",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
