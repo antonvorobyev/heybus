@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://waffle.io/antonvorobyev/heybus"
   },
-  "homepage": "https://github.com/antonvorobyev/heybus#readme"
+  "homepage": "https://github.com/antonvorobyev/heybus#readme",
+  "devDependencies": {
+    "bower": "^1.7.9"
+  }
 }
