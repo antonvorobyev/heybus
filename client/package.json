@@ -20,7 +20,17 @@
     "url": "https://waffle.io/antonvorobyev/heybus"
   },
   "homepage": "https://github.com/antonvorobyev/heybus#readme",
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+
   "devDependencies": {
-    "bower": "^1.7.9"
+    "bower": "^1.7.9",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-qunit": "^1.1.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }
